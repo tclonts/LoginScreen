@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="kZO-fA-YSj">
     <device id="retina5_9" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -23,6 +23,13 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="dJH-L4-Kb5">
                                 <rect key="frame" x="-1" y="-1" width="375" height="284.33333333333331"/>
                             </imageView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pVG-gV-qpF">
+                                <rect key="frame" x="0.0" y="282" width="375" height="1"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="1" id="ZW0-Sv-7SD"/>
+                                </constraints>
+                            </view>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="KIC-Vu-jZN">
                                 <rect key="frame" x="111" y="224" width="153" height="153"/>
                                 <constraints>
@@ -49,13 +56,18 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bOA-Py-AoE">
                                 <rect key="frame" x="121.33333333333333" y="632" width="131.33333333333337" height="30"/>
                                 <state key="normal" title="Login"/>
+                                <connections>
+                                    <action selector="loginButtonTapped:" destination="kZO-fA-YSj" eventType="touchUpInside" id="F50-2Y-5vG"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="pVG-gV-qpF" firstAttribute="width" secondItem="BKW-hj-dtI" secondAttribute="width" id="0Mc-sP-L7e"/>
                             <constraint firstItem="bOA-Py-AoE" firstAttribute="top" secondItem="1zQ-Cz-R02" secondAttribute="bottom" constant="131" id="782-5I-uSx"/>
                             <constraint firstItem="dJH-L4-Kb5" firstAttribute="centerX" secondItem="BKW-hj-dtI" secondAttribute="centerX" constant="-1" id="DBf-XN-YaJ"/>
                             <constraint firstItem="09m-vw-N2A" firstAttribute="top" secondItem="dJH-L4-Kb5" secondAttribute="top" constant="45" id="Fbs-OQ-1lI"/>
+                            <constraint firstItem="pVG-gV-qpF" firstAttribute="top" secondItem="dJH-L4-Kb5" secondAttribute="bottom" constant="-1.3333333333333144" id="L1H-1q-xed"/>
                             <constraint firstItem="KIC-Vu-jZN" firstAttribute="top" secondItem="dJH-L4-Kb5" secondAttribute="bottom" constant="-59.333333333333314" id="PQ3-ja-pO5"/>
                             <constraint firstItem="1zQ-Cz-R02" firstAttribute="width" secondItem="BKW-hj-dtI" secondAttribute="width" multiplier="0.8" id="RRJ-Xk-sHj"/>
                             <constraint firstItem="bOA-Py-AoE" firstAttribute="width" secondItem="BKW-hj-dtI" secondAttribute="width" multiplier="0.35" id="TKt-WD-Hxr"/>
@@ -65,10 +77,19 @@
                             <constraint firstItem="1zQ-Cz-R02" firstAttribute="top" secondItem="KIC-Vu-jZN" secondAttribute="bottom" constant="35" id="cGu-In-rYp"/>
                             <constraint firstItem="dJH-L4-Kb5" firstAttribute="width" secondItem="BKW-hj-dtI" secondAttribute="width" id="elp-5Q-hNa"/>
                             <constraint firstItem="dJH-L4-Kb5" firstAttribute="height" secondItem="BKW-hj-dtI" secondAttribute="height" multiplier="0.35" id="gnj-ep-aMi"/>
+                            <constraint firstItem="pVG-gV-qpF" firstAttribute="centerX" secondItem="BKW-hj-dtI" secondAttribute="centerX" id="kTg-8z-zAa"/>
                             <constraint firstItem="KIC-Vu-jZN" firstAttribute="leading" secondItem="09m-vw-N2A" secondAttribute="leading" constant="111" id="n2x-wc-5fH"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="09m-vw-N2A"/>
                     </view>
+                    <connections>
+                        <outlet property="aboutMeLabel" destination="xko-j6-F3Z" id="xzQ-pP-EL1"/>
+                        <outlet property="headerImageViw" destination="dJH-L4-Kb5" id="AMG-TO-pA6"/>
+                        <outlet property="lineView" destination="pVG-gV-qpF" id="C9r-hk-rhG"/>
+                        <outlet property="loginLabel" destination="bOA-Py-AoE" id="YQu-Sm-GQW"/>
+                        <outlet property="profileImageView" destination="KIC-Vu-jZN" id="Iev-Rx-d91"/>
+                        <outlet property="usernameLabel" destination="4y0-RL-pch" id="EBU-LF-Zze"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qRT-qE-h1l" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
